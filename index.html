@@ -1,0 +1,25 @@
+<!-- index.html (Renderer Process) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플래시카드</title>
+</head>
+<body>
+  <h1>플래시카드</h1>
+  
+  <!-- 질문/답 입력 -->
+  <div>
+    <p id="warning"></p>
+    <input type="text" id="questionInput" placeholder="질문 입력" />
+    <input type="text" id="answerInput" placeholder="답 입력" />
+    <button id="addButton" onclick="addFlashcard()">추가</button>
+  </div>
+
+  <!-- 플래시카드 표시 -->
+  <ul id="flashcards"></ul>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
