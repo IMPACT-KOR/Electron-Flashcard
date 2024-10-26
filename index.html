@@ -1,25 +1,44 @@
 <!-- index.html (Renderer Process) -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>플래시카드</title>
+  <title>플래시카드 앱</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <h1>플래시카드</h1>
-  
-  <!-- 질문/답 입력 -->
-  <div>
-    <p id="warning"></p>
-    <input type="text" id="questionInput" placeholder="질문 입력" />
-    <input type="text" id="answerInput" placeholder="답 입력" />
-    <button id="addButton" onclick="addFlashcard()">추가</button>
+  <div id="app">
+    <div id="sidebar">
+      <h2>폴더</h2>
+      <div class="sidebar-buttons">
+        <button id="addFolderBtn" class="icon-button">
+          <span class="plus-icon"></span> 폴더
+        </button>
+        <button id="addFileBtn" class="icon-button">
+          <span class="plus-icon"></span> 파일
+        </button>
+      </div>
+      <ul id="folderList"></ul>
+    </div>
+    <div id="main-content">
+      <div id="flashcard-creator">
+        <h2>새 플래시카드 만들기</h2>
+        <input type="text" id="questionInput" placeholder="질문">
+        <textarea id="answerInput" placeholder="답변"></textarea>
+        <input type="file" id="imageInput" accept="image/*">
+        <input type="text" id="tagsInput" placeholder="태그 (쉼표로 구분)">
+        <select id="folderSelect"></select>
+        <button id="createFlashcardBtn">생성</button>
+      </div>
+      <div id="flashcard-viewer" style="display: none;">
+        <div id="question"></div>
+        <div id="answer" style="display: none;"></div>
+        <button id="showAnswerBtn">답변 보기</button>
+        <button id="nextCardBtn">다음 카드</button>
+      </div>
+    </div>
   </div>
-
-  <!-- 플래시카드 표시 -->
-  <ul id="flashcards"></ul>
-
-  <script src="renderer.js"></script>
+  <script src="scripts/app.js" type="module"></script>
 </body>
 </html>
